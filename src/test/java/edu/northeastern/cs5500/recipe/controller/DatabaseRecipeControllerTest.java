@@ -14,7 +14,7 @@ import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 /** Note that this test suite will fail with timeout exceptions if mongodb is not running. */
 class DatabaseRecipeControllerTest {
-    // static MongoDBService mongoDBService;
+    static MongoDBService mongoDBService;
 
     RecipeController getRecipeController() {
         if (mongoDBService == null) {
