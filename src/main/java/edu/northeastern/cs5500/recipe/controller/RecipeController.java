@@ -23,7 +23,7 @@ public class RecipeController {
 
         if (recipes.count() > 0) {
             return;
-    }
+        }
 
         log.info("RecipeController > construct > adding default recipes");
 
@@ -77,7 +77,7 @@ public class RecipeController {
     public void updateRecipe(@Nonnull Recipe recipe) throws Exception {
         log.debug("RecipeController > updateRecipe(...)");
         recipes.update(recipe);
-        }
+    }
 
     public void deleteRecipe(@Nonnull ObjectId id) throws Exception {
         log.debug("RecipeController > deleteRecipe(...)");

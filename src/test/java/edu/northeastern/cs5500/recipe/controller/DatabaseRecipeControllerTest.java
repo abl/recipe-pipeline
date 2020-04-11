@@ -10,6 +10,7 @@ import edu.northeastern.cs5500.recipe.model.Recipe;
 import edu.northeastern.cs5500.recipe.repository.MongoDBRepository;
 import edu.northeastern.cs5500.recipe.service.MongoDBService;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 
 /** Note that this test suite will fail with timeout exceptions if mongodb is not running. */
 class DatabaseRecipeControllerTest {
@@ -23,12 +24,14 @@ class DatabaseRecipeControllerTest {
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "GITHUB_ACTIONS", matches = "true")
     void testRegisterCreatesRecipes() {
         RecipeController recipeController = getRecipeController();
         assertThat(recipeController.getRecipes()).isNotEmpty();
     }
 
     @Test
+    @DisabledIfEnvironmentVariable(named = "GITHUB_ACTIONS", matches = "true")
     void testRegisterCreatesValidRecipes() {
         RecipeController recipeController = getRecipeController();
 
